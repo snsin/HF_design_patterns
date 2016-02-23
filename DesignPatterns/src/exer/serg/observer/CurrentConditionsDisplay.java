@@ -1,6 +1,6 @@
 package exer.serg.observer;
 
-public class CurrentConditionsDisplay implements Observer, DisplayElement {
+public class CurrentConditionsDisplay implements ObserverOld, DisplayElement {
 	private float temperature;
 	private float humidity;
 //	private float pressure;

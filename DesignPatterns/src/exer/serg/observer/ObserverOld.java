@@ -1,5 +1,5 @@
 package exer.serg.observer;
 
-public interface Observer {
+public interface ObserverOld {
 	public void update(float temperature, float humidity, float pressure);
 }

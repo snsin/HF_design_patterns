@@ -1,6 +1,6 @@
 package exer.serg.observer;
 
-public class StatisticsDisplay implements Observer, DisplayElement {
+public class StatisticsDisplay implements ObserverOld, DisplayElement {
 	private float maxTemp = 0.0f;
 	private float minTemp = 200;
 	private float tempSum= 0.0f;
