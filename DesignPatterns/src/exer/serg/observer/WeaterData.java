@@ -40,6 +40,7 @@ public class WeaterData implements Subject {
 		this.temperature = temperature;
 		this.humidity = humidity;
 		this.pressure = pressure;
+		measurementsChanged();
 	}
 
 }
