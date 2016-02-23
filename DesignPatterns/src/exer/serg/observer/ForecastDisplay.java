@@ -1,19 +1,26 @@
 package exer.serg.observer;
 
-public class ForecastDisplay implements ObserverOld, DisplayElement {
+import java.util.Observable;
+import java.util.Observer;
+
+public class ForecastDisplay implements Observer, DisplayElement {
 	private float currentPressure = 29.92f;  
 	private float lastPressure;
-	private WeatherData weatherData;
+	private Observable weatherData;
 
-	public ForecastDisplay(WeatherData weatherData) {
+	public ForecastDisplay(Observable weatherData) {
 		this.weatherData = weatherData;
-		weatherData.registerObserver(this);
+		weatherData.addObserver(this);
 	}
 	
 	@Override
-	public void update(float temp, float humidity, float pressure) {
+	public void update(Observable o, Object arg) {
         lastPressure = currentPressure;
-		currentPressure = pressure;
+        if (o instanceof WeatherData) {
+        	WeatherData weatherData = (WeatherData) o;
+        	currentPressure = weatherData.getPressure();
+        }
+		
 		display();
 	}
 	
