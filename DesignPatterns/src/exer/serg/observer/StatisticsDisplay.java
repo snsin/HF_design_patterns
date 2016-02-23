@@ -1,19 +1,27 @@
 package exer.serg.observer;
 
-public class StatisticsDisplay implements ObserverOld, DisplayElement {
+import java.util.Observable;
+import java.util.Observer;
+
+public class StatisticsDisplay implements Observer, DisplayElement {
 	private float maxTemp = 0.0f;
 	private float minTemp = 200;
 	private float tempSum= 0.0f;
 	private int numReadings;
-	private WeatherData weatherData;
+	private Observable weatherData;
 
 	public StatisticsDisplay(WeatherData weatherData) {
 		this.weatherData = weatherData;
-		weatherData.registerObserver(this);
+		weatherData.addObserver(this);
 	}
 
 	@Override
-	public void update(float temp, float humidity, float pressure) {
+	public void update(Observable o, Object arg) {
+		WeatherData weatherData = null;
+		if (o instanceof WeatherData) {
+			weatherData = (WeatherData) o;
+		}
+		float temp = weatherData.getTemperature();		
 		tempSum += temp;
 		numReadings++;
 
