@@ -3,13 +3,13 @@ package exer.serg.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeaterData implements Subject {
+public class WeatherData implements Subject {
 	private List<Observer> observers;
 	private float temperature;
 	private float humidity;
 	private float pressure;
 	
-	public WeaterData() {
+	public WeatherData() {
 		this.observers = new ArrayList<>();
 	}
 	@Override
