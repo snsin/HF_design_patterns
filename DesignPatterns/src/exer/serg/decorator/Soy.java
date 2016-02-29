@@ -8,6 +8,11 @@ public class Soy extends ConditimentDecorator {
 		this.beverage = beverage;
 
 	}
+	
+	public Size getSize() {
+		return beverage.getSize();
+		
+	}
 
 	@Override
 	public String getDescription() {
@@ -17,7 +22,7 @@ public class Soy extends ConditimentDecorator {
 	@Override
 	public double cost() {
 		double cost = beverage.cost();
-		Beverage.Size sz = getSize();
+		Size sz = getSize();
 		switch (sz) { 
 		case TALL:
 			cost += 0.10;

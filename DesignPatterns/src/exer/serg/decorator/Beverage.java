@@ -17,7 +17,7 @@ public abstract class Beverage {
 	}
 	
 	public Size getSize() {
-		return size;
+		return this.size;
 	}
 
 }
