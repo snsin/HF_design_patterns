@@ -1,11 +1,11 @@
 package exer.serg.factory;
 
-public class ChicagoStyleCheesePizza extends Pizza {
-	public ChicagoStyleCheesePizza() {
-		name = "Chicago Style Deep Dish Cheese Pizza";
+public class ChicagoStyleClamPizza extends Pizza {
+	public ChicagoStyleClamPizza() {
+		name = "Chicago Style Deep Dish Clam Pizza";
 		dough = "Extra Thick Crust Dough";
 		sauce = "Plum Tomato Sauce";
-		toppings.add("Shreded Mozarella Cheese");
+		toppings.add("Frozen Clams");
 	}
 	
 	@Override
