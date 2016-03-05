@@ -10,6 +10,6 @@ public class ChicagoStyleCheesePizza extends Pizza {
 	
 	@Override
 	void cut() {
-		System.out.println("Cutting the pizza ino square slices");
+		System.out.println("Cutting the pizza into square slices");
 	}
 }

@@ -5,12 +5,12 @@ public class ChicagoStyleVeggiePizza extends Pizza {
 		name = "Chicago Style Deep Dish Veggie Pizza";
 		dough = "Extra Thick Crust Dough";
 		sauce = "Plum Tomato Sauce";
-		toppings.add("Sone Veggie Topping");
+		toppings.add("Some Veggie Topping");
 	}
 	
 	@Override
 	void cut() {
-		System.out.println("Cutting the pizza ino square slices");
+		System.out.println("Cutting the pizza into square slices");
 	}
 
 }
