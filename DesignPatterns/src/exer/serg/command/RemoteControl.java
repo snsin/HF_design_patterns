@@ -47,7 +47,7 @@ public class RemoteControl {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		result.append("\n------ Remote Control ------");
+		result.append("\n------ Remote Control ------\n");
 		for (int i = 0; i < DEFAULT_KEYS_COUNT; i++) {
 			result.append(slotWithNo(i));
 			result.append(onCommandName(i));
@@ -60,7 +60,7 @@ public class RemoteControl {
 	private String offCommandName(int i) {
 		String result = "";
 		if (isValid(i)) {
-			result = onCommands[i].getClass().getName();
+			result = offCommands[i].getClass().getSimpleName() + "\t";
 		}
 		return result;
 	}
@@ -68,13 +68,13 @@ public class RemoteControl {
 	private String onCommandName(int i) {
 		String result = "";
 		if (isValid(i)) {
-			result = offCommands[i].getClass().getName();
+			result = onCommands[i].getClass().getSimpleName()+ "\t";
 		}
 		return result;
 	}
 
 	private String slotWithNo(int i) {
-		return "[slot " + i + "]";
+		return "[slot " + i + "] \t";
 	}
 	
 }
