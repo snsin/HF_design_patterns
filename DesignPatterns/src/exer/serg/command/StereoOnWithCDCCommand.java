@@ -15,4 +15,9 @@ public class StereoOnWithCDCCommand implements Command {
 		stereo.setVolume(Stereo.DEFAULT_VOLUME_LEVEL);
 	}
 
+	@Override
+	public void undo() {
+		stereo.off();
+	}
+
 }
