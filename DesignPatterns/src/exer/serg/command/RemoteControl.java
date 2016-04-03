@@ -57,7 +57,12 @@ public class RemoteControl {
 			result.append(offCommandName(i));
 			result.append("\n");
 		}
+		result.append(undoCommandName());
 		return result.toString();
+	}
+
+	private Object undoCommandName() {
+		return undoCommand.getClass().getName() + "\t";
 	}
 
 	private String offCommandName(int i) {
