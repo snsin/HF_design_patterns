@@ -10,26 +10,26 @@ public class Stereo {
 	}
 	
 	public void on() {
-		System.out.println(place +  "stereo is on!");
+		System.out.println(place +  " stereo is on!");
 	}
 
 	public void off() {
-		System.out.println(place +  "stereo is off!");
+		System.out.println(place +  " stereo is off!");
 	}
 	
 	public void setCd() {
-		System.out.println(place +  "stereo is set for CD input!");
+		System.out.println(place +  " stereo is set for CD input!");
 	}
 	
 	public void setDvd() {
-		System.out.println(place +  "stereo is set for DVD input!");
+		System.out.println(place +  " stereo is set for DVD input!");
 	}
 	
 	public void setRadio() {
-		System.out.println(place +  "stereo is set for radio input!");
+		System.out.println(place +  " stereo is set for radio input!");
 	}
 	
 	public void setVolume(int level) {
-		System.out.println(place +  "stereo volume is setted to " + level + "!");
+		System.out.println(place +  " stereo volume is setted to " + level + "!");
 	}
 }
