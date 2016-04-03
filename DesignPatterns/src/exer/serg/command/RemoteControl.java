@@ -34,7 +34,7 @@ public class RemoteControl {
 		}
 	}
 	
-	public void ffButtonWasPressed(int slot) {
+	public void offButtonWasPressed(int slot) {
 		if (isValid(slot)){
 			offCommands[slot].execute();
 		}
