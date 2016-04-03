@@ -17,7 +17,8 @@ public class RemoteControlTest {
 		LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
 		
 		CeillingFanOffCommand ceillingFanOff = new CeillingFanOffCommand(ceillingFan);
-		CeillingFanOnCommand ceillingFanOnCommand = new CeillingFanOnCommand(ceillingFan);
+		CeillingFanHighCommand ceillingFanHighCommand = new CeillingFanHighCommand(ceillingFan);
+		CeillingFanMediumCommand ceillingFanMediumCommand = new CeillingFanMediumCommand(ceillingFan);
 		
 		GarageDoorUpCommand garageDoorUpCommand = new GarageDoorUpCommand(door);
 		GarageDoorDownCommand garageDoorDownCommand = new GarageDoorDownCommand(door);
@@ -27,9 +28,12 @@ public class RemoteControlTest {
 		
 		remote.setCommand(0, livingRoomLightOn, livingRoomLightOff);
 		remote.setCommand(1, kitchenLightOn, kitchenLightOff);
-		remote.setCommand(2, ceillingFanOnCommand, ceillingFanOff);
+		remote.setCommand(2, ceillingFanHighCommand, ceillingFanOff);
 		remote.setCommand(3, stereoOnWithCDCCommand, stereoOffCommand);
 		remote.setCommand(4, garageDoorUpCommand, garageDoorDownCommand);
+		
+		remote.setCommand(0, ceillingFanMediumCommand, ceillingFanOff);
+		remote.setCommand(1, ceillingFanHighCommand, ceillingFanOff);
 		
 		System.out.println(remote);
 		
@@ -43,15 +47,6 @@ public class RemoteControlTest {
 		System.out.println(remote);
 		remote.undoButtonWasPressed();
 		
-		
-		remote.onButtonWasPressed(2);
-		remote.offButtonWasPressed(2);
-		System.out.println(remote);
-		remote.undoButtonWasPressed();
-		
-		remote.onButtonWasPressed(3);
-		remote.offButtonWasPressed(3);
-		System.out.println(remote);
 	}
 
 }
