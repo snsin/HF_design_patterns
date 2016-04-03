@@ -25,21 +25,26 @@ public class RemoteControlTest {
 		
 		StereoOnWithCDCCommand stereoOnWithCDCCommand = new StereoOnWithCDCCommand(stereo);
 		StereoOffCommand stereoOffCommand = new StereoOffCommand(stereo);
+		Command[] partyOn = new Command[] {livingRoomLightOn, stereoOnWithCDCCommand, ceillingFanMediumCommand};
+		Command[] partyOff = new Command[] {livingRoomLightOff, stereoOffCommand, ceillingFanOff};
 		
-		remote.setCommand(0, livingRoomLightOn, livingRoomLightOff);
-		remote.setCommand(1, kitchenLightOn, kitchenLightOff);
-		remote.setCommand(2, ceillingFanHighCommand, ceillingFanOff);
-		remote.setCommand(3, stereoOnWithCDCCommand, stereoOffCommand);
-		remote.setCommand(4, garageDoorUpCommand, garageDoorDownCommand);
+		MacroCommand partyOnCommand = new MacroCommand(partyOn);
+		MacroCommand partyOffCommand = new MacroCommand(partyOff);
 		
-		remote.setCommand(0, ceillingFanMediumCommand, ceillingFanOff);
-		remote.setCommand(1, ceillingFanHighCommand, ceillingFanOff);
+		remote.setCommand(0, partyOnCommand, partyOffCommand);
+		
+		
 		
 		System.out.println(remote);
-		
+		System.out.println("\n--- Pushing Macro On ---\n");
 		remote.onButtonWasPressed(0);
+		System.out.println("\n--- Pushing Macro Off ---\n");
 		remote.offButtonWasPressed(0);
+		
+		System.out.println("\n--- Pushing Macro On ---\n");
+		remote.onButtonWasPressed(0);
 		System.out.println(remote);
+		System.out.println("\n--- Pushing Undo ---\n");
 		remote.undoButtonWasPressed();
 		
 		remote.onButtonWasPressed(1);
