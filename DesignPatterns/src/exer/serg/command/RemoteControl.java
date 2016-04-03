@@ -1,13 +1,13 @@
 package exer.serg.command;
 
 public class RemoteControl {
-	private static final int DEFAULT_KEYS_COUNT = 7;
+	private static final int KEYS_COUNT = 7;
 	Command[] onCommands;
 	Command[] offCommands;
 
 	public RemoteControl() {
-		onCommands = new Command[DEFAULT_KEYS_COUNT];
-		offCommands = new Command[DEFAULT_KEYS_COUNT];
+		onCommands = new Command[KEYS_COUNT];
+		offCommands = new Command[KEYS_COUNT];
 		Command noCommand = new NoCommand();
 
 		for (int i = 0; i < onCommands.length; i++) {
@@ -41,14 +41,14 @@ public class RemoteControl {
 	}
 
 	private boolean isValid(int slot) {
-		return slot > -1 && slot < DEFAULT_KEYS_COUNT;
+		return slot > -1 && slot < KEYS_COUNT;
 	}
 	
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append("\n------ Remote Control ------\n");
-		for (int i = 0; i < DEFAULT_KEYS_COUNT; i++) {
+		for (int i = 0; i < KEYS_COUNT; i++) {
 			result.append(slotWithNo(i));
 			result.append(onCommandName(i));
 			result.append(offCommandName(i));
@@ -75,6 +75,10 @@ public class RemoteControl {
 
 	private String slotWithNo(int i) {
 		return "[slot " + i + "] \t";
+	}
+	
+	private int validSlot(int slot) {
+		return slot % KEYS_COUNT;
 	}
 	
 }
