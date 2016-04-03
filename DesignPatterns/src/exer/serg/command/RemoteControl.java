@@ -17,27 +17,23 @@ public class RemoteControl {
 	}
 
 	public void setCommand(int slot, Command onCommand, Command offCommand) {
-		if (isValid(slot)) {
-			if (onCommand != null) {
-				onCommands[slot] = onCommand;
-			}
-			
-			if (offCommand != null) {
-				offCommands[slot] = offCommand;
-			}
+		if (onCommand != null) {
+			onCommands[validSlot(slot)] = onCommand;
 		}
+		
+		if (offCommand != null) {
+			offCommands[validSlot(slot)] = offCommand;
+		}
+		
 	}
 	
 	public void onButtonWasPressed(int slot) {
-		if (isValid(slot)){
-			onCommands[slot].execute();
-		}
+		onCommands[validSlot(slot)].execute();
 	}
 	
 	public void offButtonWasPressed(int slot) {
-		if (isValid(slot)){
-			offCommands[slot].execute();
-		}
+		offCommands[validSlot(slot)].execute();
+		
 	}
 
 	private boolean isValid(int slot) {
