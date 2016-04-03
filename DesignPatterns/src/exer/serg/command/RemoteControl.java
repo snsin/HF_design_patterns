@@ -4,6 +4,7 @@ public class RemoteControl {
 	private static final int KEYS_COUNT = 7;
 	Command[] onCommands;
 	Command[] offCommands;
+	Command undoCommand;
 
 	public RemoteControl() {
 		onCommands = new Command[KEYS_COUNT];
@@ -14,6 +15,7 @@ public class RemoteControl {
 			onCommands[i] = noCommand;
 			offCommands[i] = noCommand;
 		}
+		undoCommand = noCommand;
 	}
 
 	public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -29,11 +31,16 @@ public class RemoteControl {
 	
 	public void onButtonWasPressed(int slot) {
 		onCommands[validSlot(slot)].execute();
+		undoCommand = onCommands[validSlot(slot)];
 	}
 	
 	public void offButtonWasPressed(int slot) {
 		offCommands[validSlot(slot)].execute();
-		
+		undoCommand = onCommands[validSlot(slot)];
+	}
+	
+	public void undoButtonWasPressed() {
+		undoCommand.undo();
 	}
 
 	private boolean isValid(int slot) {
