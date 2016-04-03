@@ -1,9 +1,9 @@
 package exer.serg.command;
 
-public class CeillingFanOnCommand implements Command {
+public class CeillingFanHighCommand implements Command {
 	CeillingFan fan;
 	
-	public CeillingFanOnCommand(CeillingFan fan) {
+	public CeillingFanHighCommand(CeillingFan fan) {
 		this.fan = fan;
 	}	
 
