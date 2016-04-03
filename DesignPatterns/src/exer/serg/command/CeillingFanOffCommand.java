@@ -12,4 +12,9 @@ public class CeillingFanOffCommand implements Command {
 		fan.off();
 	}
 
+	@Override
+	public void undo() {
+		fan.high();
+	}
+
 }
