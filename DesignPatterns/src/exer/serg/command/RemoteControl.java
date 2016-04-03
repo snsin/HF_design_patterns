@@ -36,7 +36,7 @@ public class RemoteControl {
 	
 	public void offButtonWasPressed(int slot) {
 		offCommands[validSlot(slot)].execute();
-		undoCommand = onCommands[validSlot(slot)];
+		undoCommand = offCommands[validSlot(slot)];
 	}
 	
 	public void undoButtonWasPressed() {
@@ -62,7 +62,7 @@ public class RemoteControl {
 	}
 
 	private Object undoCommandName() {
-		return undoCommand.getClass().getName() + "\t";
+		return "Undo Command: " + undoCommand.getClass().getSimpleName() + "\t";
 	}
 
 	private String offCommandName(int i) {
