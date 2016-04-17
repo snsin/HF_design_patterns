@@ -1,8 +1,10 @@
 package exer.serg.composite;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Menu extends MenuComponent {
+	private Iterator<MenuComponent> iterator = null;
 	private ArrayList<MenuComponent> menuComponents = new ArrayList<>();
 	private String name;
 	private String description;
@@ -44,6 +46,14 @@ public class Menu extends MenuComponent {
 		for (MenuComponent menuComponent : menuComponents) {
 			menuComponent.print();
 		}
+	}
+
+	@Override
+	public Iterator<MenuComponent> createIterator() {
+		if (iterator == null) {
+			iterator =  new CompositeIterator(menuComponents.iterator());
+		}
+		return iterator;
 	}
 
 }
