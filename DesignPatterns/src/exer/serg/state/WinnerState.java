@@ -23,7 +23,7 @@ public class WinnerState implements State {
 	}
 
 	@Override
-	public void dispens() {
+	public void dispense() {
 		System.out.println("YOU'RE A WINNER! You get two gumballs for your quarter");
 		gumballMachine.releaseBall();
 		if (gumballMachine.getCount() == 0) {

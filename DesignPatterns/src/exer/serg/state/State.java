@@ -6,6 +6,6 @@ public interface State {
 	void insertQuarter();
 	void ejectQuarter();
 	void turnCrunk();
-	void dispens();
+	void dispense();
 	
 }
