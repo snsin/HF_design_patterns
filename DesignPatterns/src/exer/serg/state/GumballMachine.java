@@ -5,6 +5,7 @@ public class GumballMachine {
 	private State noQuarterState;
 	private State hasQuarterState;
 	private State soldState;
+	private State winnerState;
 
 	private State state  = soldState;
 	private int count = 0;
@@ -35,6 +36,10 @@ public class GumballMachine {
 
 	public State getSoldState() {
 		return soldState;
+	}
+
+	public State getWinnerState() {
+		return winnerState;
 	}
 
 	public int getCount() {
