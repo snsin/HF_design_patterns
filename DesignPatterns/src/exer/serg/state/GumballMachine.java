@@ -1,6 +1,65 @@
 package exer.serg.state;
 
 public class GumballMachine {
-	
+	private State soldOutState;
+	private State noQuarterState;
+	private State hasQuarterState;
+	private State soldState;
 
+	private State state  = soldState;
+	private int count = 0;
+	
+	public GumballMachine(int numberGumballs) {
+
+		this.count = numberGumballs;
+		if (numberGumballs > 0) {
+			state = noQuarterState;
+		}
+	}
+	
+	public void insertQuarter() {
+		state.insertQuarter();
+	}
+	
+	public State getSoldOutState() {
+		return soldOutState;
+	}
+
+	public State getNoQuarterState() {
+		return noQuarterState;
+	}
+
+	public State getHasQuarterState() {
+		return hasQuarterState;
+	}
+
+	public State getSoldState() {
+		return soldState;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void ejectQuarter() {
+		state.ejectQuarter();
+	}
+	
+	public void turnCrunk() {
+		state.turnCrunk();
+		state.dispens();
+	}
+	
+	public void setState(State state) {
+		if (state != null) {
+			this.state = state;
+		}
+	}
+	
+	void releaseBall() {
+		System.out.println("A gumball comes rolling out the slot...");
+		if (count > 0) {
+			count--;
+		}
+	}
 }
