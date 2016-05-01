@@ -11,6 +11,11 @@ public class GumballMachine {
 	private int count = 0;
 	
 	public GumballMachine(int numberGumballs) {
+		soldOutState = new SoldOutState(this);
+		noQuarterState = new NoQuarterState(this);
+		hasQuarterState = new HasQuarterState(this);
+		soldOutState = new SoldOutState(this);
+		winnerState = new WinnerState(this);
 
 		this.count = numberGumballs;
 		if (numberGumballs > 0) {
