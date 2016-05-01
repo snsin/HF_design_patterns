@@ -15,7 +15,7 @@ public class NoQuarterState implements State {
 	}
 
 	@Override
-	public void turnCrunk() {
+	public void turnCrank() {
 		// TODO Auto-generated method stub
 
 	}

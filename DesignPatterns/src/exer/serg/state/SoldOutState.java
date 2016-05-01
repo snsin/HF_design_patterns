@@ -22,7 +22,7 @@ public class SoldOutState implements State {
 	}
 
 	@Override
-	public void turnCrunk() {
+	public void turnCrank() {
 		System.out.println("You turned but machine is sold out!");
 
 	}

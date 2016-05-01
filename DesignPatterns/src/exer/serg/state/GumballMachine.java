@@ -51,7 +51,7 @@ public class GumballMachine {
 	}
 	
 	public void turnCrunk() {
-		state.turnCrunk();
+		state.turnCrank();
 		state.dispense();
 	}
 	

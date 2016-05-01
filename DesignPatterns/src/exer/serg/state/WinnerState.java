@@ -18,7 +18,7 @@ public class WinnerState implements State {
 	}
 
 	@Override
-	public void turnCrunk() {
+	public void turnCrank() {
 		System.out.println("Turning twice doesn't get you another gumball!");
 	}
 
