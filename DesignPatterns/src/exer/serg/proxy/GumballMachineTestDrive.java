@@ -1,5 +1,7 @@
 package exer.serg.proxy;
 
+import java.rmi.RemoteException;
+
 import exer.serg.state.GumballMachine;
 
 public class GumballMachineTestDrive {
@@ -19,7 +21,13 @@ public class GumballMachineTestDrive {
 			System.out.println("Second argument must be an integer number.");
 			System.exit(BAD_ARGUMENT);
 		}
-		GumballMachine gumballMachine = new GumballMachine(args[0], count);
+		GumballMachine gumballMachine = null;
+		try {
+			gumballMachine = new GumballMachine(args[0], count);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		GumballMonitor monitor = new GumballMonitor(gumballMachine);
 		monitor.report();
