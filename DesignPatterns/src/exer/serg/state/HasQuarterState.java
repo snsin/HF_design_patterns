@@ -3,7 +3,11 @@ package exer.serg.state;
 import java.util.Random;
 
 public class HasQuarterState implements State {
-	GumballMachine gumballMachine;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private transient GumballMachine gumballMachine;
 	Random randomWinner = new Random(System.currentTimeMillis());
 	 
 	public HasQuarterState(GumballMachine gumballMachine) {

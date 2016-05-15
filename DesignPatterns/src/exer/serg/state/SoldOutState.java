@@ -2,7 +2,11 @@ package exer.serg.state;
 
 public class SoldOutState implements State {
 	
-	private GumballMachine gumballMachine;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private transient GumballMachine gumballMachine;
 	
 	public SoldOutState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;

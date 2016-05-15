@@ -1,7 +1,11 @@
 package exer.serg.state;
 
 public class NoQuarterState implements State {
-	private GumballMachine gumballMachine;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private transient GumballMachine gumballMachine;
 
 	public NoQuarterState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
