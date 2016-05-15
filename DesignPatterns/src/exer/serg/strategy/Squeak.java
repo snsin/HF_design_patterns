@@ -1,4 +1,4 @@
-package expl.serg.strategy;
+package exer.serg.strategy;
 
 public class Squeak implements QuackBehavior {
 
