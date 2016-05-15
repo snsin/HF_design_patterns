@@ -103,4 +103,14 @@ public class GumballMachine {
 		result.append("Machine is " + state + "\n");
 		return result.toString();
 	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public State getState() {
+		return state;
+	}
 }
