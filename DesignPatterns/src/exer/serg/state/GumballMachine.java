@@ -1,6 +1,15 @@
 package exer.serg.state;
 
-public class GumballMachine {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+import exer.serg.proxy.GumballMachineRemote;
+
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private State soldOutState;
 	private State noQuarterState;
 	private State hasQuarterState;
@@ -12,7 +21,7 @@ public class GumballMachine {
 	private State state  = soldState;
 	private int count = 0;
 	
-	public GumballMachine(int numberGumballs) {
+	public GumballMachine(int numberGumballs) throws RemoteException {
 		statesInit();
 
 		this.count = numberGumballs;
@@ -22,7 +31,7 @@ public class GumballMachine {
 	}
 
 
-	public GumballMachine(String location, int count) {
+	public GumballMachine(String location, int count) throws RemoteException {
 		this.location = location;
 		statesInit();
 		this.count = count;
