@@ -1,8 +1,9 @@
 
 package exer.serg.state;
 
+import java.io.Serializable;
 
-public interface State {
+public interface State extends Serializable{
 	void insertQuarter();
 	void ejectQuarter();
 	void turnCrank();
