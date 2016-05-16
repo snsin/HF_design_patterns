@@ -18,6 +18,7 @@ public class GumballMachineTestDrive {
 		try {
 			count = Integer.parseInt(args[1]);
 		} catch (NumberFormatException e) {
+			e.printStackTrace();
 			System.out.println("Second argument must be an integer number.");
 			System.exit(BAD_ARGUMENT);
 		}
