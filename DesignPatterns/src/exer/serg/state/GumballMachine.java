@@ -88,7 +88,8 @@ public class GumballMachine extends UnicastRemoteObject implements GumballMachin
 	public State getWinnerState() {
 		return winnerState;
 	}
-
+	
+	@Override
 	public int getCount() {
 		return count;
 	}
@@ -113,12 +114,12 @@ public class GumballMachine extends UnicastRemoteObject implements GumballMachin
 		return result.toString();
 	}
 
-
+	@Override
 	public String getLocation() {
 		return location;
 	}
 
-
+	@Override
 	public State getState() {
 		return state;
 	}
