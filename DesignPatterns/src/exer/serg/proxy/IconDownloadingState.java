@@ -40,7 +40,7 @@ class IconDownloadingState implements Icon {
 						ImageIcon imageIcon = new ImageIcon(imageURL, "CD cover");
 						proxy.setState(imageIcon);
 						c.repaint();
-					} catch (NullPointerException e) { // TODO Cange to correct exception
+					} catch (Exception e) { 
 						e.printStackTrace();
 					}
 										
