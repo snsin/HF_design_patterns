@@ -1,6 +1,7 @@
 import java.awt.Component;
 import java.awt.Graphics;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 class ImageProxy implements Icon {
@@ -9,51 +10,27 @@ class ImageProxy implements Icon {
 	private Thread retrievalThread;
 	private boolean retrieving = false;
 	
+	private Icon downloadingState;
+	private Icon downloadedState;
+	private Icon currentState;
+	
 	public ImageProxy(URL url) {
 		imageURL = url;
+		currentState = new IconDownloadingState();
 	}
 	
 	@Override
 	public int getIconWidth() {
-		if (imageIcon != null) {
-			return imageIcon.getIconWidth();
-		} else {
-			return 800;
-		}
+		return currentState.getIconWidth();
 	}
 	
 	@Override
 	public int getIconHeigth() {
-		if (imageIcon != null) {
-			return imageIcon.getIconHeight();
-		} else {
-			return 600;
-		}
+		currentState.getIconHeight();
 	}
 	
 	@Override
 	public void paintIcon(final Component c, Graphics g, int x, int y) {
-		if (imageIcon != null) {
-			imageIcon.paintIcon(c, g, x, y);
-		} else {
-			g.drawString("Loading CD cover, please wait...", x + 300, y + 190);
-			if (!retrieving) {
-				retrieving = true;
-				retrievalThread = new Thread(new Runnable() {
-					
-					@Override
-					public void run() {
-						try {
-							imageIcon = new ImageIcon(imageURL, "CD Cover");
-							c.repaint();
-						} catch (Exception e) {
-							e.printStackTrace(s);							
-						}
-						
-					}
-				});
-				retrievalThread.start();
-			}
-		}
+		currentState.paintIcon(c, g, x, y);
 	}
 }
