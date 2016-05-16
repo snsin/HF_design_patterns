@@ -30,7 +30,7 @@ class IconDownloadingState implements Icon {
 	@Override
 	public void paintIcon(final Component c, Graphics g, int x, int y) {
 		g.drawString("Loading CD cover, please wait...", x + 300, y + 190);
-		if (!retrieving) { 
+		if (!retrieving) {
 			retrieving = true;
 			new Thread(new Runnable() {
 				
@@ -38,9 +38,11 @@ class IconDownloadingState implements Icon {
 				public void run() {
 					try {
 						ImageIcon imageIcon = new ImageIcon(imageURL, "CD cover");
-						proxy.setState(imageIcon);
+						Thread.sleep(20000L);
+						proxy.setState(imageIcon);	
 						c.repaint();
 					} catch (Exception e) { 
+						System.out.println("!!!!!!!!!!!");
 						e.printStackTrace();
 					}
 										
