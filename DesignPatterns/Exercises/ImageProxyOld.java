@@ -5,18 +5,13 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 class ImageProxy implements Icon {
-	private ImageIcon imageIcon;
-	private URL imageURL;
-	private Thread retrievalThread;
-	private boolean retrieving = false;
 	
 	private Icon downloadingState;
 	private Icon downloadedState;
 	private Icon currentState;
 	
 	public ImageProxy(URL url) {
-		imageURL = url;
-		currentState = new IconDownloadingState();
+		currentState = new IconDownloadingState(this, url);
 	}
 	
 	@Override
@@ -32,5 +27,9 @@ class ImageProxy implements Icon {
 	@Override
 	public void paintIcon(final Component c, Graphics g, int x, int y) {
 		currentState.paintIcon(c, g, x, y);
+	}
+	
+	public void setState(Icon state) {
+		currentState = state;
 	}
 }
