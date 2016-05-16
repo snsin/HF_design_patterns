@@ -8,9 +8,11 @@ import javax.swing.ImageIcon;
 class IconDownloadingState implements Icon {
 	private boolean retrieving = false;
 	private ImageProxy proxy;
+	private URL imageURL;
 	
-	public IconDownloadingState(ImageProxy proxy) {
+	public IconDownloadingState(ImageProxy proxy, URL url) {
 		this.proxy = proxy;
+		this.imageURL = url;
 	}
 	
 	@Override
