@@ -1,6 +1,10 @@
+package exer.serg.proxy;
+
 import java.awt.Component;
 import java.awt.Graphics;
+import java.net.URL;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 class ImageProxy implements Icon {
@@ -23,7 +27,7 @@ class ImageProxy implements Icon {
 	}
 	
 	@Override
-	public int getIconHeigth() {
+	public int getIconHeight() {
 		if (imageIcon != null) {
 			return imageIcon.getIconHeight();
 		} else {
@@ -47,13 +51,13 @@ class ImageProxy implements Icon {
 							imageIcon = new ImageIcon(imageURL, "CD Cover");
 							c.repaint();
 						} catch (Exception e) {
-							e.printStackTrace(s);							
-						}
-						
+							e.printStackTrace();
+						}						
 					}
 				});
 				retrievalThread.start();
 			}
 		}
 	}
+
 }
