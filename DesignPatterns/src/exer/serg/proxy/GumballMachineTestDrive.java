@@ -1,5 +1,7 @@
 package exer.serg.proxy;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 
 import exer.serg.state.GumballMachine;
@@ -25,8 +27,8 @@ public class GumballMachineTestDrive {
 		GumballMachine gumballMachine = null;
 		try {
 			gumballMachine = new GumballMachine(args[0], count);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
+			Naming.rebind("gumballmachine", gumballMachine);
+		} catch (RemoteException | MalformedURLException e) {
 			e.printStackTrace();
 		}
 		
