@@ -7,7 +7,7 @@ import exer.serg.state.GumballMachine;
 public class GumballMonitor {
 	GumballMachineRemote machine;
 	
-	public GumballMonitor(GumballMachine machine) {
+	public GumballMonitor(GumballMachineRemote machine) {
 		this.machine = machine;
 	}
 	
