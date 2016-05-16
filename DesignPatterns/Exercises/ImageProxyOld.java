@@ -37,6 +37,23 @@ class ImageProxy implements Icon {
 			imageIcon.paintIcon(c, g, x, y);
 		} else {
 			g.drawString("Loading CD cover, please wait...", x + 300, y + 190);
+			if (!retrieving) {
+				retrieving = true;
+				retrievalThread = new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						try {
+							imageIcon = new ImageIcon(imageURL, "CD Cover");
+							c.repaint();
+						} catch (Exception e) {
+							e.printStackTrace(s);							
+						}
+						
+					}
+				});
+				retrievalThread.start();
+			}
 		}
 	}
 }
