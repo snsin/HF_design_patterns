@@ -27,7 +27,7 @@ public class GumballMachineTestDrive {
 		GumballMachine gumballMachine = null;
 		try {
 			gumballMachine = new GumballMachine(args[0], count);
-			Naming.rebind("gumballmachine", gumballMachine);
+			Naming.rebind("//:" + args[0] + "/gumballmachine", gumballMachine);
 		} catch (RemoteException | MalformedURLException e) {
 			e.printStackTrace();
 		}
