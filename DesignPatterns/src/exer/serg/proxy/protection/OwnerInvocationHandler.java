@@ -21,10 +21,8 @@ public class OwnerInvocationHandler implements InvocationHandler {
 				return method.invoke(person, args);
 			}
 		} catch (IllegalArgumentException | InvocationTargetException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return null;
 	}
 
