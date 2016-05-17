@@ -3,7 +3,7 @@ package exer.serg.state;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-import exer.serg.proxy.GumballMachineRemote;
+import exer.serg.proxy.remote.GumballMachineRemote;
 
 public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
 	/**
