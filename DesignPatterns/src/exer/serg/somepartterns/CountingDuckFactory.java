@@ -14,12 +14,12 @@ public class CountingDuckFactory extends AbstractDuckFactory {
 
 	@Override
 	public Quackable createDuckCall() {
-		return new DuckCall();
+		return new QuackCounter(new DuckCall());
 	}
 
 	@Override
 	public Quackable createRubberDuck() {
-		return new RubberDuck();
+		return new QuackCounter(new RubberDuck());
 	}
 
 }
