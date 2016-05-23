@@ -13,7 +13,7 @@ public class DuckSimulator {
 		Quackable redheadDuck = duckFactory.createRedheadDuck();
 		Quackable duckCall = duckFactory.createDuckCall();
 		Quackable rubberDuck = duckFactory.createRubberDuck();
-		Quackable gooseDuck = new GooseAdapter(new Goose());
+		Quackable gooseDuck = GooseDuckFactory.createGooseDuck();
 				
 		System.out.println("\nDuck Simulator: With Abstract Factory");
 		
