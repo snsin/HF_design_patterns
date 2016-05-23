@@ -3,7 +3,7 @@ package exer.serg.somepartterns;
 public class QuackCounter implements Quackable {
 
 	private Quackable duck;
-	private int numberOfQuacks;
+	private static int numberOfQuacks;
 	
 	public QuackCounter(Quackable duck) {
 		this.duck = duck;
@@ -15,7 +15,7 @@ public class QuackCounter implements Quackable {
 		numberOfQuacks++;
 	}
 	
-	public int getQuacks() {
+	public static int getQuacks() {
 		return numberOfQuacks;
 	}
 
