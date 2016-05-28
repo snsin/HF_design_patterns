@@ -14,12 +14,15 @@ public class Flock implements Quackable {
 	public void quack() {
 		for (Quackable quacker : quackers) {
 			quacker.quack();
+			quacker.notifyObservers();
 		}
 
 	}
 	@Override
 	public void registerObserver(Observer observer) {
-		
+		for (Quackable quacker : quackers) {
+			quacker.registerObserver(observer);
+		}
 	}
 	@Override
 	public void notifyObservers() {
