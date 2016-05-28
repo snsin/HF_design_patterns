@@ -20,6 +20,6 @@ public interface BeatModelInterface {
 
 	void setBpm(int i);
 
-	void beatEvent();
+	void beatEvent(); //TODO remove this method
 
 }
