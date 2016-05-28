@@ -63,6 +63,7 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 	}
 	
 	public void notifyBpmObservers() {
+		System.out.println("notifyBpmObservers: stub");
 		// TODO Auto-generated method stub
 		
 	}
@@ -72,22 +73,26 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 	}
 
 	public void notifyBeatObservers() {
+		System.out.println("notifyBeatObservers: stub");
 		// TODO Auto-generated method stub
 		
 	}
 
 	private void buildTrackAndStart() {
+		System.out.println("buildTrackAndStart: stub");
 		// TODO Auto-generated method stub
 		
 	}
 
 	private void setUpMidi() {
+		System.out.println("setUpMidi: stub");
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void meta(MetaMessage meta) {
+		System.out.println("meta: stub");
 		// TODO Auto-generated method stub
 
 	}
