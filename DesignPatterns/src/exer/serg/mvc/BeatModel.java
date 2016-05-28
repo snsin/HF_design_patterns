@@ -31,6 +31,7 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 		sequencer.stop();
 	}
 
+	@Override
 	public void setBpm(int bpm) {
 		this.bpm = bpm;
 		sequencer.setTempoInBPM(getBpm());
@@ -38,6 +39,7 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 		
 	}
 	
+	@Override
 	public int getBpm() {
 		return bpm;
 	}
