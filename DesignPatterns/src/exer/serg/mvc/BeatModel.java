@@ -10,7 +10,7 @@ import javax.sound.midi.MetaMessage;
 import javax.sound.midi.Sequencer;
 
 public class BeatModel implements MetaEventListener, BeatModelInterface {
-	private Sequencer sequencer;
+	private Sequencer sequencer = new SequencerStub();
 	private List<BeatObserver> beatObservers = new ArrayList<>();
 	private List<BpmObserver> bpmObservers = new ArrayList<>();
 	private int bpm = 90;
@@ -25,7 +25,7 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 	public void on() {
 		sequencer.start();
 		setBpm(90);
-		startBeat();
+		startBeat(); //TODO remove this
 	}
 	
 	@Override
