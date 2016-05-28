@@ -2,6 +2,8 @@ package exer.serg.mvc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.sound.midi.MetaEventListener;
 import javax.sound.midi.MetaMessage;
@@ -23,6 +25,7 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 	public void on() {
 		sequencer.start();
 		setBpm(90);
+		startBeat();
 	}
 	
 	@Override
@@ -99,6 +102,12 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 		System.out.println("meta: stub");
 		// TODO Auto-generated method stub
 
+	}
+	
+	public void startBeat() { //TODO Remove this method;
+		Timer timer = new Timer();
+		TimerTask beat = new BeatStub(this);
+		timer.schedule(beat, 3000, 60000/bpm);
 	}
 
 }
