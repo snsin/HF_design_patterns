@@ -75,8 +75,9 @@ public class BeatModel implements MetaEventListener, BeatModelInterface {
 	}
 
 	public void notifyBeatObservers() {
-		System.out.println("notifyBeatObservers: stub");
-		// TODO Auto-generated method stub
+		for (BeatObserver beatObserver : beatObservers) {
+			beatObserver.updateBeat();
+		}
 		
 	}
 
