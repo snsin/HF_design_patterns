@@ -2,9 +2,6 @@ package exer.serg.mvc;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Time;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javax.swing.JLabel;
 
@@ -82,12 +79,6 @@ public class DjView implements BpmObserver, BeatObserver, ActionListener {
 			bpmOutLabel.setText("Current BPM: " + bpm);
 			System.out.println(">> Current BPM: " + bpm); //TODO remove this
 		}
-	}
-	
-	public void startBeat() { //TODO Remove this method;
-		Timer timer = new Timer();
-		TimerTask beat = new BeatStub(model);
-		timer.schedule(beat, 3000, 500);
 	}
 
 }
