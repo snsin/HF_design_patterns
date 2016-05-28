@@ -16,4 +16,8 @@ public interface BeatModelInterface {
 
 	void removeObserver(BpmObserver o);
 
+	int getBpm();
+
+	void setBpm(int i);
+
 }
