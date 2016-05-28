@@ -14,7 +14,6 @@ public class Flock implements Quackable {
 	public void quack() {
 		for (Quackable quacker : quackers) {
 			quacker.quack();
-			quacker.notifyObservers();
 		}
 
 	}

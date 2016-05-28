@@ -1,5 +1,7 @@
 package exer.serg.somepartterns;
 
+import java.util.List;
+
 public class MallardDuck implements Quackable {
 	Observable observable;
 	
@@ -24,6 +26,10 @@ public class MallardDuck implements Quackable {
 	public void notifyObservers() {
 		observable.notifyObservers();
 		
+	}
+	
+	public List<Observer> getObs() {
+		return observable.getObservers();
 	}
 
 }

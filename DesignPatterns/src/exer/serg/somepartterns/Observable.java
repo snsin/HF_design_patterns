@@ -6,6 +6,10 @@ import java.util.List;
 public class Observable implements QuackObservable {
 	
 	private List<Observer> observers = new ArrayList<>();
+	public List<Observer> getObservers() {
+		return observers;
+	}
+
 	private QuackObservable duck;
 	
 	public Observable(QuackObservable duck) {
@@ -23,5 +27,6 @@ public class Observable implements QuackObservable {
 			observer.update(duck);
 		}
 	}
+	
 
 }
