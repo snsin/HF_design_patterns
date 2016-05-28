@@ -20,4 +20,6 @@ public interface BeatModelInterface {
 
 	void setBpm(int i);
 
+	void beatEvent();
+
 }
