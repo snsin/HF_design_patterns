@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JTextField;
 
 public class DjView implements BpmObserver, BeatObserver, ActionListener {
@@ -17,6 +18,8 @@ public class DjView implements BpmObserver, BeatObserver, ActionListener {
 	private JTextField bpmTextField;
 	private JButton increaseBpmButton;
 	private JButton decreaseBpmButton;
+	private JMenuItem stopMenuItem;
+	private JMenuItem startMenuItem;
 	
 	public DjView(ControllerInterface controller, BeatModelInterface model) {
 		this.controller = controller;
@@ -51,28 +54,21 @@ public class DjView implements BpmObserver, BeatObserver, ActionListener {
 		
 	}
 
+	public void enableStopMenuItem() {
+		stopMenuItem.setEnabled(true);
+	}
+
+
 	public void disableStopMenuItem() {
-		System.out.println("disableStopMenuItem: stub");
-		// TODO Auto-generated method stub
-		
+		stopMenuItem.setEnabled(false);
 	}
 
 	public void enableStartMenuItem() {
-		System.out.println("enableStartMenuItem: stub");
-		// TODO Auto-generated method stub
-		
+		startMenuItem.setEnabled(true);
 	}
 
 	public void disableStartMenuItem() {
-		System.out.println("disableStartMenuItem: stub");
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void enableStopMenuItem() {
-		System.out.println("enableStopMenuItem: stub");
-		// TODO Auto-generated method stub
-		
+		startMenuItem.setEnabled(false);
 	}
 
 	@Override
