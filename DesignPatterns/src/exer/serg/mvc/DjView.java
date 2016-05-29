@@ -3,13 +3,20 @@ package exer.serg.mvc;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class DjView implements BpmObserver, BeatObserver, ActionListener {
 	private BeatModelInterface model;
 	private ControllerInterface controller;
 	private JLabel bpmOutLabel = new JLabel(); //TODO remove init
 	private BeatBar beatBar = new BeatBar(); //TODO remove init
+	private JButton setBpmButton;
+	private JTextField bpmTextField;
+	private JButton increaseBpmButton;
+	private JButton decreaseBpmButton;
 	
 	public DjView(ControllerInterface controller, BeatModelInterface model) {
 		this.controller = controller;
@@ -21,9 +28,15 @@ public class DjView implements BpmObserver, BeatObserver, ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("actionPerformed: stub. Create Action code");
-		// TODO Auto-generated method stub
-
+		final Object source = e.getSource();
+		if (source == setBpmButton) {
+			final int bpm = Integer.parseInt(bpmTextField.getText());
+			controller.setBpm(bpm);
+		} else if (source == increaseBpmButton) {
+			controller.increaseBpm();			
+		} else if (source == decreaseBpmButton) {
+			controller.decreaseBpm();			
+		}
 	}
 
 	public void createView() {
