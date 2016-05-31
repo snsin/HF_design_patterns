@@ -10,7 +10,12 @@ public class HeartModel implements Runnable, HeartModelInterface {
 	private int time = 1000;
 	private Collection<BeatObserver> beatObservers = new ArrayList<>();
 	private Collection<BpmObserver> bpmObservers = new ArrayList<>();
+	private Thread thread;
 	
+	public HeartModel() {
+		thread = new Thread(this);
+		thread.start();
+	}
 
 	@Override
 	public void run() {
